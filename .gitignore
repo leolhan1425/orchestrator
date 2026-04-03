@@ -1,0 +1,6 @@
+# Don't commit actual project config (has domains/repos)
+project-groups.json
+# Logs
+agent-logs/
+# macOS
+.DS_Store

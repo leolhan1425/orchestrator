@@ -1,0 +1,19 @@
+{
+  "groups": {
+    "voila": ["voila-pcr", "voila-assay", "voila-blot", "voilascience"],
+    "trackers": ["reddit-bc-tracker", "peds-asthma-tracker", "lab-budget-tracker"],
+    "web": ["voila-pcr", "voila-assay", "voila-blot", "paybreakdown", "forest-park-trails"],
+    "all": ["voila-pcr", "voila-assay", "voila-blot", "voilascience", "reddit-bc-tracker", "peds-asthma-tracker", "lab-budget-tracker", "paybreakdown", "forest-park-trails"]
+  },
+  "projects": {
+    "voila-pcr":           { "domain": "voilapcr.com",            "port": 8055, "repo": "leolhan1425/voila-pcr" },
+    "voila-assay":         { "domain": "voilaassay.com",          "port": 8056, "repo": "leolhan1425/voila-assay" },
+    "voila-blot":          { "domain": "voilablot.com",           "port": 8058, "repo": "leolhan1425/voila-blot" },
+    "voilascience":        { "domain": "voilascience.com",        "port": null, "repo": "leolhan1425/voilascience" },
+    "reddit-bc-tracker":   { "domain": "bctracker.hanlabnw.com",  "port": 8050, "repo": "leolhan1425/bc-tracker" },
+    "peds-asthma-tracker": { "domain": "asthma.hanlabnw.com",     "port": 8053, "repo": "leolhan1425/peds-asthma-tracker" },
+    "lab-budget-tracker":  { "domain": "budget.hanlabnw.com",     "port": 8057, "repo": "leolhan1425/lab-budget-tracker" },
+    "paybreakdown":        { "domain": "salaryhog.com",           "port": 8054, "repo": "leolhan1425/paybreakdown" },
+    "forest-park-trails":  { "domain": "forestparktrails.com",    "port": 8059, "repo": "leolhan1425/forest-park-trails" }
+  }
+}
