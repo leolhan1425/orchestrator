@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "d=\"$(git rev-parse --show-toplevel 2>/dev/null)\"; [ -n \"$d\" ] && sh \"$d/.claude/hooks/sync.sh\"",
+            "timeout": 25,
+            "statusMessage": "Syncing repo with origin..."
+          }
+        ]
+      }
+    ]
+  }
+}
