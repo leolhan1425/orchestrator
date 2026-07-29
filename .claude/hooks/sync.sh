@@ -3,10 +3,10 @@
 #
 # Leo works from two Macs. On 2026-07-27 a session on the other Mac had stale memory
 # and rebuilt a project against rules it could not see; the cost was a compliance
-# drift, not a merge conflict. Fresh code is not enough — memory has to be fresh too.
+# drift, not a merge conflict. Fresh code is not enough  -  memory has to be fresh too.
 #
 # This is the PORTABLE hook: it travels with the repo via git, so it works on a machine
-# that was never configured, and it is deliberately SELF-SUFFICIENT — it pulls the
+# that was never configured, and it is deliberately SELF-SUFFICIENT  -  it pulls the
 # memory repo itself rather than assuming a global hook exists. On a machine that does
 # have ~/.claude/hooks/session-git-sync.sh (which does strictly more: all-repo drift
 # scan, standing-rule injection), this steps aside to avoid duplicate fetches.
@@ -26,12 +26,12 @@ for mem in "$HOME"/.claude/projects/*/memory; do
     if [ -n "$before" ] && [ "$before" != "$after" ]; then
       n=$(git -C "$mem" rev-list --count "$before..$after" 2>/dev/null)
       NOTE="Auto-memory was just updated with $n commit(s) from the other machine, so \
-memories recalled in this session may predate them — re-read any memory file you rely \
+memories recalled in this session may predate them  -  re-read any memory file you rely \
 on before acting on it. "
     fi
   else
     NOTE="WARNING: the auto-memory repo could not be fast-forwarded (offline, or it has \
-diverged). Memory may be STALE and may be missing decisions made on the other machine — \
+diverged). Memory may be STALE and may be missing decisions made on the other machine  -  \
 say so before relying on it. "
   fi
 done
@@ -65,7 +65,7 @@ if [ "${ahead:-0}" -eq 0 ]; then
       "$branch" "$behind" "$NOTE" "$behind"
   fi
 else
-  printf '{"systemMessage":"git: %s is %s behind origin, NOT pulled — reconcile","hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"%sThis repo is %s commit(s) behind origin and could NOT be fast-forwarded: it has unpushed commits, or a local edit would be overwritten by the incoming changes. Do NOT edit files here until this is reconciled with the user."}}\n' \
+  printf '{"systemMessage":"git: %s is %s behind origin, NOT pulled  -  reconcile","hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"%sThis repo is %s commit(s) behind origin and could NOT be fast-forwarded: it has unpushed commits, or a local edit would be overwritten by the incoming changes. Do NOT edit files here until this is reconciled with the user."}}\n' \
     "$branch" "$behind" "$NOTE" "$behind"
 fi
 exit 0
